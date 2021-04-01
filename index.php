@@ -34,14 +34,14 @@
 </head>
 <body>
 
-	<!--header-starts-->
+  <!--header-starts-->
   <header class="clearfix">
 
     <div class="container"><!--container Start-->
 
 		<div class="Logo_Cont left"><!--Logo_Cont Start-->
                     	
-           <a href="index.html"><img src="web/images/logo.png" alt=""  /></a>
+           <a href="index.php"><img src="web/images/logo.png" alt=""  /></a>
         
         </div><!--Logo_Cont End-->
 		
@@ -58,7 +58,7 @@
 				<div class="toggle_menu"><a href="javascript:void(0)">Menu</a></div>
                  <div id= "topMenu">
                  	<ul>
-                 		<li><a href="index.html">Home</a></li>
+                 		<li><a href="index.php">Home</a></li>
                  		<li><a href="blog_index.html">Dating Blog</a></li>
                  		<li><a href="who_we_help.html">Who We Help</a></li>
                  		<li><a href="why_vital.html">Why Vital</a></li>
@@ -78,10 +78,18 @@
 
   <div class="section banner_section who_we_help">
   	<div class="container">
-  		<h4>Thanks For Your Inquiry</h4>
+  		<h4>PHP Assignments</h4>
   	</div>
   </div>
-
+	<!-- main body content -->
+	<div class="group-btn home-content">
+		<div class="container">
+			<a class="btn" href="pages/product.php" title="">Products</a>
+			<a class="btn" href="pages/category.php" title="">Category</a>
+			<a class="btn" href="pages/product.php" title="">Create Product</a>
+			<a class="btn" href="pages/list.php" title="">Create Catgory</a>
+		</div>
+	</div>
 
 <div class="section clearfix section-colored7"><!--section start--> 
     	

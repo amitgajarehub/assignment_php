@@ -830,3 +830,18 @@ ul.bxslider1 .image_block img{ border: medium none; border-radius: 0; display: i
 .next_btn button:hover {
     background-color: #afd428;
 }
+.group-btn.home-content {
+    padding: 150px 0;
+    text-align: center;
+}
+.group-btn.home-content a.btn {
+    padding: 15px 32px;
+    font-size: 16px;
+    font-family: 'roboto_slabregular';
+    color: #fff;
+    background-color: #a8ce38;
+    border-radius: 5px;
+    margin: 15px;
+    text-decoration: none;
+    display: inline-block;
+}

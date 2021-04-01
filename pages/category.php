@@ -17,8 +17,10 @@
 		  	</div>
 	    </div>
 
-	    <!-- category -->
-	    <div class="section content_section">
+	    <!-- submit category -->
+	    	
+	    <form action="../code/function.php" method="post" accept-charset="utf-8">
+	      <div class="section content_section">
 			<div class="container">
 				<div class="filable_form_container">
 					<div class="form_container_block">
@@ -26,19 +28,23 @@
 							<li class="fileds">
 								<div class="name_fileds">
 									<label>Category Name</label>
-									<input name="firstname" type="text"> 
+									<input name="category_name" type="text"> 
 								</div>
 							</li>
 						</ul>
 						<div class="next_btn_block">
 							<div class="next_btn">
-								<a href="#">Submit  <span><img src="../web/images/small_triangle.png" alt="small_triangle"> </span></a>
+								<button type="submit" name="category_submit">Submit 
+									<span><img src="../web/images/small_triangle.png" alt="small_triangle"></span>
+								</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>		
 		  </div>
+	    </form>
+	    <!-- content end -->
 
 		<!-- footer start -->
 		<?php include 'footer.php';?>

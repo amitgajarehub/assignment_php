@@ -7,7 +7,7 @@
 
 		<div class="Logo_Cont left"><!--Logo_Cont Start-->
                     	
-           <a href="index.html"><img src="../web/images/logo.png" alt=""  /></a>
+           <a href="../index.php"><img src="../web/images/logo.png" alt=""  /></a>
         
         </div><!--Logo_Cont End-->
 		
@@ -24,7 +24,7 @@
 				<div class="toggle_menu"><a href="javascript:void(0)">Menu</a></div>
                  <div id= "topMenu">
                  	<ul>
-                 		<li><a href="index.html">Home</a></li>
+                 		<li><a href="../index.php">Home</a></li>
                  		<li><a href="blog_index.html">Dating Blog</a></li>
                  		<li><a href="who_we_help.html">Who We Help</a></li>
                  		<li><a href="why_vital.html">Why Vital</a></li>
