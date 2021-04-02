@@ -84,10 +84,10 @@
 	<!-- main body content -->
 	<div class="group-btn home-content">
 		<div class="container">
-			<a class="btn" href="pages/product.php" title="">Products</a>
-			<a class="btn" href="pages/category.php" title="">Category</a>
+			<!-- <a class="btn" href="pages/product.php" title="">Products</a> -->
+			<a class="btn" href="pages/category.php" title="">Create Category</a>
 			<a class="btn" href="pages/product.php" title="">Create Product</a>
-			<a class="btn" href="pages/list.php" title="">Create Catgory</a>
+			<a class="btn" href="pages/list.php" title="">Show Products list</a>
 		</div>
 	</div>
 

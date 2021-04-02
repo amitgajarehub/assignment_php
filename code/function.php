@@ -26,41 +26,68 @@
 	}
 
 	// product data submitted
-	/*if (isset($_POST['product_submit']))
+	if (isset($_POST['product_submit']))
 	 {
-		$title=$_POST['name'];	
-		$title=$_POST['price'];	
-		//$title=$_POST['name'];	
+	 	//initialize variable
+		$name=$_POST['name'];	
+		$price=$_POST['price'];	
+		$category=$_POST['category'];	
 		
-		$flag=0;
-	 	$target_dir="file/";
+		//set file derectory
+	 	$target_dir="../files/";
 	 	$target_dir=$target_dir.basename($_FILES['product_img']['name']);
-	 	if (move_uploaded_file($_FILES['product_img']['tmp_name'], $target_dir))
-	 	 {
-	 	 	$flag++;
-	 	 	echo "<script>alert('Image uploaded')</script>";
-	 	 }
-	 	 else
-	 	 {
-	 	 	echo "<script>alert(' Error in Image uploading')</script>";
+	 	$product_img = basename($_FILES['product_img']['name']);
+	 	
+	 	if (move_uploaded_file($_FILES['product_img']['tmp_name'], $target_dir)) {
+	 	 	$insertProduct = "INSERT INTO product (name, price, picture, category) VALUES('$name', '$price', '$product_img', '$category')";
+			mysqli_query($conn, $insertProduct);
+			echo "<script>
+					alert('Product created...');
+					window.location='../pages/product.php';
+				  </script>";
+	 	 } else {
+	 	 	echo "<script>
+	 	 			alert('Error in Image uploading...')
+	 	 			window.location='../pages/product.php';
+	 	 		</script>";
 	 	 }	
+	 }
+	 
+
+	//Update product
+
+  	if (isset($_GET['updt'])) {
+	 	
+	 	$id=$_GET['updt']; 
+		$name=$_POST['name'];
+		$price=$_POST['price'];
+		$category=$_POST['category'];
 		
-		$product_img = basename($_FILES['product_img']['name']);
+		//set file derectory
+	 	$target_dir="../files/";
+	 	
+	 	$target_dir=$target_dir.basename($_FILES['product_img']['name']);
+	 	$product_img = basename($_FILES['product_img']['name']);
+	 	$moveFile = move_uploaded_file($_FILES['product_img']['tmp_name'], $target_dir);
+	 	
+		// check image available or not 	
+	 	if ($product_img!=="") {
+			$update = "UPDATE product SET name='$name',price='$price',picture='$product_img',category='$category' where id='$id'";
+			$res=mysqli_query($conn, $update);
+	 		
+			if ($res) {
+				echo "<script>alert('update successfully...'); window.location='../pages/list.php';</script>";
+			}
+	 	} else {
+	 		$update = "UPDATE product SET name='$name',price='$price',category='$category' where id='$id'";
+			$res=mysqli_query($conn, $update);
+	 		
+			if ($res) {
+				echo "<script>alert('update successfully...'); window.location='../pages/list.php';</script>";
+			}
+	 	}
 
-
-		if ($flag==1)
-	    {
-			$ins = "INSERT INTO blogtbl (title, content, product_img, blog_date, create_date, sort_order, status) VALUES('$title', '$mytextarea', '$product_img', '$blog_date', '$create_date', '$sort_order', '$status')";
-			mysqli_query($con, $ins);
-			echo "<script>alert('Blog Created...'); window.location='index.php';</script>";
-		}
-		else
-		{
-			echo "<script>alert('Something has wrong...'); window.location='index.php';</script>";	
-		}
-
-	 }*/
-
+	}
 
 
  ?>

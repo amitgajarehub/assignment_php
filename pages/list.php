@@ -1,3 +1,6 @@
+<!--  server connection -->
+<?php include '../code/connection.php';  ?>
+		
 <!DOCTYPE html>
 <html>
 	<?php include 'default_head.php';?>
@@ -25,7 +28,7 @@
 					 	<input type="submit" class="submit" value="submit">
 					 </div>
 						</li>-->
-						<li><a href="add_category.html">Create Product</a></li>
+						<li><a href="product.php">Create Product</a></li>
 						<li><a href="#">Delete</a></li>
 					</ul>
 				</div>
@@ -36,59 +39,36 @@
 							<th width="10%">
 								<input type="checkbox" class="checkbox" id="checkbox_sample18"> <label class="css-label mandatory_checkbox_fildes" for="checkbox_sample18"></label>
 							</th>
-							<th style="">Product Name <!--<a href="#" class="sort_icon"><img src="images/sort.png"></a>--></th>
+							<th style="">Product Name</th>
 							<th style="">Product Image</th>
 							<th style="">Product Price</th>
-							<th style="">Product Category <!--<a href="#" class="sort_icon"><img src="images/sort.png"></a>--></th>
+							<th style="">Product Category</th>
 							<th>Action</th>
 							</tr>
 						</thead>
+						<?php $results = mysqli_query($conn, "SELECT * FROM product"); ?>
 						<tbody>
+							<?php while ($row = mysqli_fetch_array($results)) { ?>
 							<tr>
 								<td>
 									<input type="checkbox" class="checkbox" id="checkbox_sample19"> <label class="css-label mandatory_checkbox_fildes" for="checkbox_sample19"></label>
 								</td>
-								<td>Iphone</td>
-								<td style="text-align:center"><img src="http://www.weatherforecast.co.uk/blog/wp-content/uploads/2015/01/noimage.jpg" style="width:80px; height:auto;"></td>
-								<td style="text-align:right">Rs 60000</td>
-								<td>Mobile</td>
+								<td><?php echo $row['name']; ?></td>
+								<td style="text-align:center"><?php echo "<img src='../files/".$row['picture']."'height='auto' width='80px'>"; ?></td>
+								<td style="text-align:right"><?php echo $row['price']; ?></td>
+								<td><?php echo $row['category']; ?></td>
 								<td>
 									<div class="buttons">
-									  <button class="btn btn_edit">Edit</button>
-									  <button class="btn btn_delete">Delete</button>
+									    <a href="../code/edit.php?id=<?php echo $row['id'];?>">
+									  	  <button class="btn btn_edit">Edit</button>
+									    </a>
+									    <a href="../code/action/delete.php?id=<?php echo $row['id'];?>">
+									  	  <button class="btn btn_delete">Delete</button>
+									    </a>
 									</div>								
 								</td>
 							</tr>
-							<tr>
-								<td>
-									<input type="checkbox" class="checkbox" id="checkbox_sample19"> <label class="css-label mandatory_checkbox_fildes" for="checkbox_sample19"></label>
-								</td>
-								<td>Nexus 5</td>
-								<td style="text-align:center"><img src="http://www.weatherforecast.co.uk/blog/wp-content/uploads/2015/01/noimage.jpg" style="width:80px; height:auto;"></td>
-								<td style="text-align:right">Rs 39000</td>
-								<td>Mobile</td>
-								<td>
-									<div class="buttons">
-									  <button class="btn btn_edit">Edit</button>
-									  <button class="btn btn_delete">Delete</button>
-									</div>								
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<input type="checkbox" class="checkbox" id="checkbox_sample19"> <label class="css-label mandatory_checkbox_fildes" for="checkbox_sample19"></label>
-								</td>
-								<td>I20</td>
-								<td style="text-align:center"><img src="http://www.weatherforecast.co.uk/blog/wp-content/uploads/2015/01/noimage.jpg" style="width:80px; height:auto;"></td>
-								<td style="text-align:right">Rs 709000</td>
-								<td>Automobile</td>
-								<td>
-									<div class="buttons">
-									  <button class="btn btn_edit">Edit</button>
-									  <button class="btn btn_delete">Delete</button>
-									</div>								
-								</td>
-							</tr>
+							<?php } ?>
 						</tbody>
 					</table>
 				</div>

@@ -14,7 +14,7 @@
 	    </div>
 		
 		<!-- product -->
-		<form action="../code/function.php" method="post" accept-charset="utf-8">
+		<form action="../code/function.php" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 			<div class="section content_section">
 				<div class="container">
 					<div class="filable_form_container">
@@ -23,25 +23,25 @@
 								<li class="fileds">
 									<div class="name_fileds">
 										<label>Product Name</label>
-										<input name="name" type="text"> 
+										<input name="name" type="text" required=""> 
 									</div>
 								</li>
 								<li class="fileds">
 									<div class="name_fileds">
 										<label>Product Price</label>
-										<input name="price" type="text"> 
+										<input name="price" type="text" required=""> 
 									</div>
 								</li>
 								<li class="fileds">
 									<div class="upload_fileds">
 										<label>Upload Image</label>
-										<input id="uploadFile" name="product_img" type="file" placeholder="Choose File" class="mandatory_fildes">
+										<input id="uploadFile" name="product_img" type="file" placeholder="Choose File" class="mandatory_fildes" onchange="validateImage()">
 									</div>						
 								</li>
 								<li class="fileds">
 									<div class="name_fileds">
 										<label>Select Category</label>
-										<select name="category" class="select category" style="z-index: 10; opacity: 0;">
+										<select name="category" class="select category" style="z-index: 10; opacity: 0;" required>
 											<option value="mobile">Mobile</option>
 											<option value="automobile">Automobile</option>
 										</select><span class="select">Mobile</span> 
