@@ -1,20 +1,31 @@
 <?php 
 	// server connection
-	include 'connection.php';
+	require_once 'connection.php';
+	require_once 'product.php';
+	require_once 'function.php';
 
 	if (isset($_GET['id'])) {
 
 		$id = $_GET['id'];
-		$select = "SELECT * FROM product where id=$id";
-		$q = mysqli_query($conn, $select);
+				
+		if (filter($id)) {
 		
-		while ($res=mysqli_fetch_array($q)) {
+			$select = "SELECT * FROM product WHERE id = $id";
+			$q = mysqli_query($conn, $select);
 
-		 	$id=$res['id'];
-		 	$name=$res['name'];
-		 	$price=$res['price'];
-		 	$picture=$res['picture'];
-		 	$category=$res['category'];
+			while ($res=mysqli_fetch_assoc($q)) {
+
+			 	$id=$res['id']; 
+			 	$name=$res['name'];
+			 	$price=$res['price'];
+			 	$picture=$res['picture'];
+			 	$category=$res['category'];
+			}
+		}else{
+			echo "<script>
+		 	 			alert('ID not found')
+		 	 			window.location='../pages/product.php';
+		 	 		</script>";
 		}
 	}	
  ?> 
@@ -44,13 +55,13 @@
 								<li class="fileds">
 									<div class="name_fileds">
 										<label>Product Name</label>
-										<input name="name" type="text" value="<?php echo $name; ?>" required=""> 
+										<input name="name" type="text" value="<?php echo $name; ?>" > 
 									</div>
 								</li>
 								<li class="fileds">
 									<div class="name_fileds">
 										<label>Product Price</label>
-										<input name="price" type="text" value="<?php echo $price; ?>" required=""> 
+										<input name="price" type="text" value="<?php echo $price; ?>" > 
 									</div>
 								</li>
 								<li class="fileds">
