@@ -1,4 +1,4 @@
-//product form validation
+/*//product form validation
 
 	//image type validation
 	function validateImage() {
@@ -76,4 +76,4 @@
 		}
 	}
 
-/*************** Script End ****************/
+/*************** Script End ****************/*/

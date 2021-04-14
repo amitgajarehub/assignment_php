@@ -19,7 +19,7 @@
 
 	    <!-- submit category -->
 	    	
-	    <form action="../code/function.php" method="post" accept-charset="utf-8">
+	    <form action="../code/category/category.php" method="post" accept-charset="utf-8">
 	      <div class="section content_section">
 			<div class="container">
 				<div class="filable_form_container">

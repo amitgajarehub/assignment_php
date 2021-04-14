@@ -7,8 +7,9 @@
 	if (isset($_GET['id'])) {
 
 		$id = $_GET['id'];
+		$validID = is_numeric($id); 		//validate ID
 				
-		if (filter($id)) {
+		if ($validID) {
 		
 			$select = "SELECT * FROM product WHERE id = $id";
 			$q = mysqli_query($conn, $select);
@@ -21,11 +22,10 @@
 			 	$picture=$res['picture'];
 			 	$category=$res['category'];
 			}
-		}else{
-			echo "<script>
-		 	 			alert('ID not found')
-		 	 			window.location='../pages/product.php';
-		 	 		</script>";
+		} else {
+			echo "<script> alert('ID not found')</script>";
+ 	 		header("Location: ../pages/product.php"); 
+			exit();
 		}
 	}	
  ?> 
@@ -46,7 +46,7 @@
 	    </div>
 		
 		<!-- product -->
-		<form action="function.php?updt=<?php echo $id; ?>" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+		<form action="product/product.php?updt=<?php echo $id; ?>" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 			<div class="section content_section">
 				<div class="container">
 					<div class="filable_form_container">

@@ -62,7 +62,7 @@
 									    <a href="../code/edit.php?id=<?php echo $row['id'];?>">
 									  	  <button class="btn btn_edit">Edit</button>
 									    </a>
-									    <a href="../code/action/delete.php?id=<?php echo $row['id'];?>">
+									    <a href="../code/product/product.php?id=<?php echo $row['id'];?>">
 									  	  <button class="btn btn_delete">Delete</button>
 									    </a>
 									</div>								

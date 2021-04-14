@@ -14,7 +14,7 @@
 	    </div>
 		
 		<!-- product -->
-		<form action="../code/function.php" method="post" accept-charset="utf-8" enctype="multipart/form-data" onsubmit="return validateForm()">
+		<form action="../code/product/product.php" method="post" accept-charset="utf-8" enctype="multipart/form-data" onsubmit="return validateForm()">
 			<div class="section content_section">
 				<div class="container">
 					<div class="filable_form_container">
